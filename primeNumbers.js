@@ -1,3 +1,5 @@
+const numArray = document.getElementById('array');
+
 function sumPrimes(num) {
   //Produce an array containing all number of to and including num
   let numArray = [];
@@ -6,15 +8,18 @@ function sumPrimes(num) {
   }
 
   //Remove non-prime numbers from the array     
-  numArray.map((number) => {
+  numArray.filter((number) => {
     for (let i = 2; i < number; i++) {
         if(number % i === 0) {
             let index = numArray.indexOf(number);
-            return numArray.splice(index, 1);       
+            return numArray.splice(index, 1);  
+            
         }
     }   
   });
-console.log(numArray);
+
+  console.log(numArray);
+
 //  return numArray;
 
 }
